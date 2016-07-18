@@ -5,7 +5,7 @@ import Container from './Container'
 import Home from './Home/Home'
 import Login from './Login/Login'
 
-const auth = new AuthService(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__);
+const auth = new AuthService('vmpiu8s34kIOU3E9ntS0yWtOkGnBuRZm', 'dnavid.auth0.com');
 
 // onEnter callback to validate authentication in private routes
 const requireAuth = (nextState, replace) => {
