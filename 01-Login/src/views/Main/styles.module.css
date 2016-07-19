@@ -36,7 +36,18 @@
   text-align: center;
 }
 
-.mainJumbotron{
+/* .mainJumbotron{
         background-color: rgb(45, 140, 210);
 }
 
+
+.mainNavBar{
+        background-color: rgb(45, 140, 210);
+        border-color: rgb(45, 140, 210);
+}
+
+
+.mainMenuItem ul > li > a { 
+        color: #fff;
+}
+*/
