@@ -18,11 +18,11 @@ const modules = join(root, 'node_modules');
 const dest    = join(root, 'dist');
 
 var config = getConfig({
-        inline:true,
-        https:false,
-        port:80,
-        hostname:'0.0.0.0', 
         isDev: isDev,
+        inline:true,
+        https: isDev ? false : true,
+        port: isDev ? 80 : 443,
+        hostname:'0.0.0.0', 
         in: join(src, 'app.js'),
         out: dest,
         html: function (context) {
