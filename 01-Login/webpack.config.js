@@ -4,8 +4,8 @@ const dotenv = require('dotenv');
 const webpack = require('webpack');
 const fs      = require('fs');
 const path    = require('path'),
-      join    = path.join,
-      resolve = path.resolve;
+        join    = path.join,
+        resolve = path.resolve;
 
 const getConfig = require('hjs-webpack');
 
@@ -19,7 +19,8 @@ const dest    = join(root, 'dist');
 
 var config = getConfig({
         inline:true,
-        port:80,
+        https:true,
+        port:443,
         hostname:'0.0.0.0', 
         isDev: isDev,
         in: join(src, 'app.js'),
@@ -30,7 +31,7 @@ var config = getConfig({
                                 title: 'DNAvid - It\'s my genome',
                                 publicPath: isDev ? '' : '',
                                 meta: {
-                                      'name': 'DNAvid - It\'s my genome',
+                                        'name': 'DNAvid - It\'s my genome',
                                         'description': 'Global genome governance organization'
                                 }
                         })
@@ -45,92 +46,92 @@ const environmentEnv = dotenv.config({
         silent: true,
 });
 const envVariables =
-Object.assign({}, dotEnvVars, environmentEnv);
+        Object.assign({}, dotEnvVars, environmentEnv);
 
-        const defines =
-Object.keys(envVariables)
-        .reduce((memo, key) => {
-                const val = JSON.stringify(envVariables[key]);
-                memo[`__${key.toUpperCase()}__`] = val;
-                return memo;
-        }, {
-                __NODE_ENV__: JSON.stringify(NODE_ENV)
-        });
+const defines =
+        Object.keys(envVariables)
+                .reduce((memo, key) => {
+                        const val = JSON.stringify(envVariables[key]);
+                        memo[`__${key.toUpperCase()}__`] = val;
+                        return memo;
+                }, {
+                        __NODE_ENV__: JSON.stringify(NODE_ENV)
+                });
 
-        config.plugins = [
-new webpack.DefinePlugin(defines)
-        ].concat(config.plugins);
-        // END ENV variables
+                config.plugins = [
+                        new webpack.DefinePlugin(defines)
+                ].concat(config.plugins);
+                // END ENV variables
 
-        // CSS modules
-        const cssModulesNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`;
+                // CSS modules
+                const cssModulesNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`;
 
-        const matchCssLoaders = /(^|!)(css-loader)($|!)/;
+                const matchCssLoaders = /(^|!)(css-loader)($|!)/;
 
-        const findLoader = (loaders, match) => {
-                const found = loaders.filter(l => l && l.loader && l.loader.match(match))
+                const findLoader = (loaders, match) => {
+                        const found = loaders.filter(l => l && l.loader && l.loader.match(match))
                         return found ? found[0] : null;
-        }
-// existing css loader
-const cssloader =
-findLoader(config.module.loaders, matchCssLoaders);
+                }
+                // existing css loader
+                const cssloader =
+                        findLoader(config.module.loaders, matchCssLoaders);
 
-const newloader = Object.assign({}, cssloader, {
-        test: /\.module\.css$/,
-        include: [src],
-        loader: cssloader.loader.replace(matchCssLoaders, `$1$2?modules&localIdentName=${cssModulesNames}$3`)
-})
-config.module.loaders.push(newloader);
-cssloader.test = new RegExp(`^(?!.*(module|bootstrap)).*${cssloader.test.source}`)
-        cssloader.loader = newloader.loader
+                const newloader = Object.assign({}, cssloader, {
+                        test: /\.module\.css$/,
+                        include: [src],
+                        loader: cssloader.loader.replace(matchCssLoaders, `$1$2?modules&localIdentName=${cssModulesNames}$3`)
+                })
+                config.module.loaders.push(newloader);
+                cssloader.test = new RegExp(`^(?!.*(module|bootstrap)).*${cssloader.test.source}`)
+                cssloader.loader = newloader.loader
 
-        config.module.loaders.push({
-                test: /bootstrap\.css$/,
-                include: [modules],
-                loader: 'style-loader!css-loader'
-        })
+                config.module.loaders.push({
+                        test: /bootstrap\.css$/,
+                        include: [modules],
+                        loader: 'style-loader!css-loader'
+                })
 
-// postcss
-config.postcss = [].concat([
-                require('precss')({}),
-                require('autoprefixer')({}),
-                require('cssnano')({})
-])
-// END postcss
+                // postcss
+                config.postcss = [].concat([
+                        require('precss')({}),
+                        require('autoprefixer')({}),
+                        require('cssnano')({})
+                ])
+                // END postcss
 
-// Roots
-config.resolve.root = [src, modules]
-config.resolve.alias = {
-        'css': join(src, 'styles'),
-        'containers': join(src, 'containers'),
-        'components': join(src, 'components'),
-        'utils': join(src, 'utils'),
+                // Roots
+                config.resolve.root = [src, modules]
+                config.resolve.alias = {
+                        'css': join(src, 'styles'),
+                        'containers': join(src, 'containers'),
+                        'components': join(src, 'components'),
+                        'utils': join(src, 'utils'),
 
-        'styles': join(src, 'styles')
-}
-// end Roots
+                        'styles': join(src, 'styles')
+                }
+                // end Roots
 
-// Testing
-if (isTest) {
-        config.externals = {
-                'react/addons': true,
-                'react/lib/ReactContext': true,
-                'react/lib/ExecutionEnvironment': true,
-        }
-        config.module.noParse = /[/\\]sinon\.js/;
-        config.resolve.alias['sinon'] = 'sinon/pkg/sinon';
+                // Testing
+                if (isTest) {
+                        config.externals = {
+                                'react/addons': true,
+                                'react/lib/ReactContext': true,
+                                'react/lib/ExecutionEnvironment': true,
+                        }
+                        config.module.noParse = /[/\\]sinon\.js/;
+                        config.resolve.alias['sinon'] = 'sinon/pkg/sinon';
 
-        config.plugins = config.plugins.filter(p => {
-                const name = p.constructor.toString();
-                const fnName = name.match(/^function (.*)\((.*\))/)
+                        config.plugins = config.plugins.filter(p => {
+                                const name = p.constructor.toString();
+                                const fnName = name.match(/^function (.*)\((.*\))/)
 
-                        const idx = [
-                        'DedupePlugin',
-                        'UglifyJsPlugin'
-                        ].indexOf(fnName[1]);
-                return idx < 0;
-        })
-}
-// End Testing
+                                const idx = [
+                                        'DedupePlugin',
+                                        'UglifyJsPlugin'
+                                ].indexOf(fnName[1]);
+                                return idx < 0;
+                        })
+                }
+                // End Testing
 
-module.exports = config;
+                module.exports = config;
