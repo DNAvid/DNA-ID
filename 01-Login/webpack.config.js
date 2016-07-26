@@ -19,8 +19,8 @@ const dest    = join(root, 'dist');
 
 var config = getConfig({
         inline:true,
-        https:true,
-        port:443,
+        https:false,
+        port:80,
         hostname:'0.0.0.0', 
         isDev: isDev,
         in: join(src, 'app.js'),
