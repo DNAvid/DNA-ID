@@ -1,6 +1,8 @@
+var Radium = require('radium');
 import React, { PropTypes as T } from 'react'
 import { Jumbotron, Nav, Navbar, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
 import styles from './styles.module.css'
+import inlineStyles from './styles.module.js'
 
 export class Container extends React.Component {
   static contextTypes = {
@@ -14,15 +16,14 @@ export class Container extends React.Component {
       })
     }
 
-
-
-
     return (
       <div>
         <Navbar fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">DNAvid</a>
+                    <a href="#">
+                            <img style={inlineStyles.imgStyle} src="https://storage.googleapis.com/dnavid/logoDNAvID.png" />
+                    </a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -32,13 +33,10 @@ export class Container extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Jumbotron className={styles.mainJumbotron}>
-          <h2 className={styles.mainTitle}>
-            <img src="https://storage.googleapis.com/dnavid/logoDNAvidBlue.png" />
-          </h2>
+        <Jumbotron style={inlineStyles.jumbotronStyle}>
           {children}
         </Jumbotron>
-
+        <hr/>
         <Grid>
           <Row>
             <Col md={4}>
@@ -80,4 +78,4 @@ export class Container extends React.Component {
     )
   }
 }
-export default Container;
+export default Radium(Container);
