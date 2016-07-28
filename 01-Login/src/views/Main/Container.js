@@ -44,8 +44,7 @@ export class Container extends React.Component {
                 Claim your DNA ID 
               </h2> 
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-
+                        Create your user profile and set your preferences for your DNA. 
               </p>
             </Col>
             <Col md={4}>
@@ -53,7 +52,7 @@ export class Container extends React.Component {
                 Ratings of DNA providers 
               </h2> 
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+              Before taking the jump and obtaining your DNA from 23andMe, AncestryDNA or the growing number of providers, check out in-depth review of their services and policies towards privacy and control of your DNA. 
               </p>
             </Col>
             <Col md={4}>
@@ -61,8 +60,7 @@ export class Container extends React.Component {
                 Protect your DNA 
               </h2> 
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-
+                Upload your DNA or use our forms to request access to your DNA data. 
               </p>
             </Col>
           </Row>

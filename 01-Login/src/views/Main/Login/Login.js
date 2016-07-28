@@ -18,10 +18,10 @@ export class Login extends React.Component {
                 const { auth } = this.props
                 return (
                         <div style={styles.root}>
-                                <h2>Claim your DNA ID</h2>
+                                <h2>Own and Control your DNA</h2>
                                 <br/>
                                 <ButtonToolbar style={styles.toolbar}>
-                                        <Button bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Start</Button>
+                                        <Button bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
                                 </ButtonToolbar>
                         </div>
                 )
