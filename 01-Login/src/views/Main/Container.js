@@ -1,9 +1,13 @@
 var Radium = require('radium');
 import React, { PropTypes as T } from 'react'
-import { Jumbotron, Nav, Navbar, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
+import { Table, ProgressBar,  Jumbotron, Nav, Navbar, NavItem, NavDropdown, MenuItem, Grid, Row, Col , Badge} from 'react-bootstrap'
 import styles from './styles.module.css'
 import inlineStyles from './styles.module.js'
 import SocialShareButtons from '../../containers/ShareButtons/ShareButtons.js'
+
+
+
+const now = 60;
 
 export class Container extends React.Component {
         static contextTypes = {
@@ -30,17 +34,19 @@ export class Container extends React.Component {
                                         </Navbar.Header>
                                         <Navbar.Collapse>
                                                 <Nav pullRight>
-                                                        <NavItem target="_blank" eventKey={2} href="https://medium.com/@davidweisss/f0e47e6c1173" >Learn more</NavItem>
+                                                        <NavItem target="_blank" eventKey={2} href="https://medium.com/@davidweisss/f0e47e6c1173" >But, "Why?"</NavItem>
                                                 </Nav>
                                         </Navbar.Collapse>
                                 </Navbar>
                                 <Jumbotron style={inlineStyles.jumbotronStyle}>
                                         {children}
-                                <div style={{width:'100%', textAlign:'center'}}>
-                                        <span>Help spread the word!</span> 
-                                        <SocialShareButtons style={{}}/>
-                                </div>
+                                        <div style={{width:'100%', textAlign:'center'}}>
+                                                <span><Badge>8</Badge> Members and counting!</span> <br/><br/>
+                                                <span>Help grow the community by sharing</span> 
+                                                <SocialShareButtons/>
+                                        </div>
                                 </Jumbotron>
+
                                 <hr/>
 
                                 <Grid>
@@ -71,15 +77,18 @@ export class Container extends React.Component {
                                                 </Col>
                                         </Row>
                                 </Grid>
-                                <hr></hr>
-                                <div>
+                                <hr/>
+                               
+
+                                <div style={{width:'100%', textAlign:'center'}}>
                                         <footer>
                                                 <p>© 2016 DNAvID</p>
                                         </footer>
                                 </div>
-
                         </div>
+
                 )
         }
 }
+
 export default Radium(Container);

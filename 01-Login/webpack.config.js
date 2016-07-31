@@ -17,6 +17,10 @@ const src     = join(root, 'src');
 const modules = join(root, 'node_modules');
 const dest    = join(root, 'dist');
 
+var addHtml = '\
+<div id="root"></div> \
+'
+
 var config = getConfig({
         isDev: isDev,
         inline:true,
@@ -33,7 +37,8 @@ var config = getConfig({
                                 meta: {
                                         'name': 'DNAvid - It\'s my genome',
                                         'description': 'Global genome governance organization'
-                                }
+                                },
+                                html:addHtml
                         })
                 }
         }
@@ -106,7 +111,6 @@ const defines =
                         'containers': join(src, 'containers'),
                         'components': join(src, 'components'),
                         'utils': join(src, 'utils'),
-
                         'styles': join(src, 'styles')
                 }
                 // end Roots
