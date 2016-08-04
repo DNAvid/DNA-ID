@@ -13,3 +13,6 @@ exports.root = {
 exports.toolbar = {
   display: 'inline-block',
 }
+exports.title = {
+        fontFamily:'Varela Round',
+}

@@ -1,7 +1,3 @@
-
-
-<hr/>
-
 <div style={{width:'100%', textAlign:'center'}}>
         <ProgressBar now={now} label={`${now}%`}/>
 </div>

@@ -19,7 +19,7 @@ const dest    = join(root, 'dist');
 
 var addHtml = '\
 <div id="root"></div> \
-'
+                    '
 
 var config = getConfig({
         isDev: isDev,
