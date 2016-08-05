@@ -17,7 +17,7 @@ const src     = join(root, 'src');
 const modules = join(root, 'node_modules');
 const dest    = join(root, 'dist');
 
-var addHtml = '\
+var addBodyHtml = '\
 <div id="root"></div> \
                     '
 
@@ -38,7 +38,8 @@ var config = getConfig({
                                         'name': 'DNAvid - It\'s my genome',
                                         'description': 'Global genome governance organization'
                                 },
-                                html:addHtml
+                                html:addBodyHtml,
+                                head:'<link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/dnavid/faviconDNAvID.ico" />'
                         })
                 }
         }

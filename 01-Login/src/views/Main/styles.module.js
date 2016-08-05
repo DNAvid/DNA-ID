@@ -11,7 +11,7 @@ exports.brandStyle = {
 };
 
 exports.jumbotronStyle = {
-            backgroundColor: 'rgba(26, 188, 156,0.1)',
+            backgroundColor: 'rgba(41, 128, 185,0.1)',
             maxWidth: '100%',
             '@media (minWidth: 768px)': {
                     width: '750px',

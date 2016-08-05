@@ -17,7 +17,7 @@ console.log(usercount)
 class UserCount extends React.Component{
         constructor(props){
                 super(props)
-                this.state = {usercount: '1'}
+                this.state = {usercount: '3'}
         }
 
         componentDidMount() {

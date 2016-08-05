@@ -25,7 +25,7 @@ export class Container extends React.Component {
                                         <Navbar.Header style={inlineStyles.headerStyle} >
                                                 <Navbar.Brand>
                                                         <a href="#">
-                                                                <img style={inlineStyles.brandStyle} src="https://storage.googleapis.com/dnavid/logoDNAvID.png" />
+                                                                <img style={inlineStyles.brandStyle} src="https://storage.googleapis.com/dnavid/logoDNAvIDWhite.png" />
                                                         </a>
                                                 </Navbar.Brand>
                                                 <Navbar.Toggle />
@@ -61,6 +61,9 @@ export class Container extends React.Component {
                                                         <p>
                                                                 Request access to your DNA data (vendor, doctor, research study, etc.). 
                                                         </p>
+                                                        <p>
+                                                                <Button bsStyle="primary">Button</Button>&nbsp;
+                                                        </p>
 
                                                 </Col>
                                                 <Col md={4}>
@@ -75,7 +78,6 @@ export class Container extends React.Component {
                                                                 review services and policies towards privacy and control of your DNA. 
                                                         </p> 
                                                         <p>
-                                                                <Button bsStyle="primary">Button</Button>&nbsp;
                                                                 <Button bsStyle="default">Button</Button>
                                                         </p>
 
@@ -85,7 +87,6 @@ export class Container extends React.Component {
                                                                 <h3>Support DNAvID! </h3>
                                                                 <p>Scan Bitcoin Address with Bitcoin Wallet App.</p>
                                                                 <p>
-                                                                        <Button bsStyle="primary">Button</Button>&nbsp;
                                                                         <Button bsStyle="default">Button</Button>
                                                                 </p>
                                                         </Thumbnail>
