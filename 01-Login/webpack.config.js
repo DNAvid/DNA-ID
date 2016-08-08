@@ -20,6 +20,15 @@ const dest    = join(root, 'dist');
 var addBodyHtml = '\
 <div id="root"></div> \
                     '
+var addHeadHtml ='\
+<script type="text/javascript">\
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";\
+analytics.load("YbR5oGgxRw0T96B5lu4ZZpXJAZGE8FxG");\
+analytics.page()\
+}}();\
+</script>\
+<link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/dnavid/faviconDNAvID.ico" />\
+'
 
 var config = getConfig({
         isDev: isDev,
@@ -35,11 +44,11 @@ var config = getConfig({
                                 title: 'DNAvid - It\'s my genome',
                                 publicPath: isDev ? '' : '',
                                 meta: {
-                                        'name': 'DNAvid - It\'s my genome',
+                                        'name': 'DNAvID - It\'s my genome',
                                         'description': 'Global genome governance organization'
                                 },
                                 html:addBodyHtml,
-                                head:'<link rel="shortcut icon" type="image/x-icon" href="https://storage.googleapis.com/dnavid/faviconDNAvID.ico" />'
+                                head:addHeadHtml
                         })
                 }
         }
