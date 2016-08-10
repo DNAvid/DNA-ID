@@ -6,10 +6,12 @@ import Home from './Home/Home'
 import Login from './Login/Login'
 
 var options = {
-          theme: {
-                  logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
-          },
-          title: 'Login'
+        theme: {
+                logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
+        },
+        languageDictionary: {
+                title: 'Login or Signup'
+        }
 };
 
 const auth = new AuthService('vmpiu8s34kIOU3E9ntS0yWtOkGnBuRZm', 'dnavid.auth0.com', options);

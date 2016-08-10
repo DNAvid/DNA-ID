@@ -41,11 +41,11 @@ var config = getConfig({
         html: function (context) {
                 return {
                         'index.html': context.defaultTemplate({
-                                title: 'DNAvid - It\'s my genome',
+                                title: 'DNAvID - Claim your genome',
                                 publicPath: isDev ? '' : '',
                                 meta: {
                                         'name': 'DNAvID - It\'s my genome',
-                                        'description': 'Global genome governance organization'
+                                        'description': 'Global community for taking back control and ownership of our DNA'
                                 },
                                 html:addBodyHtml,
                                 head:addHeadHtml
