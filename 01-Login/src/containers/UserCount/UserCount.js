@@ -5,34 +5,38 @@ var firebase = require('firebase')
 
 
 var config = {
-        apiKey: "AIzaSyDcVtH8AkSWUrEwjeQEWX2GtyaaX3uzpH8",
-        authDomain: "dnavid-c48b6.firebaseapp.com",
-        databaseURL: "https://dnavid-c48b6.firebaseio.com",
-        storageBucket: "dnavid-c48b6.appspot.com",
+  apiKey: "AIzaSyDcVtH8AkSWUrEwjeQEWX2GtyaaX3uzpH8",
+  authDomain: "dnavid-c48b6.firebaseapp.com",
+  databaseURL: "https://dnavid-c48b6.firebaseio.com",
+  storageBucket: "dnavid-c48b6.appspot.com",
 };
 var firebaseApp = firebase.initializeApp(config);
-var usercount = firebaseApp.database().ref("numberofusers").on('value',function(snapshot){snapshot.val()});
-console.log(usercount)
+var UCRef = firebaseApp.database().ref("numberofusers")
 
 class UserCount extends React.Component{
-        constructor(props){
-                super(props)
-                this.state = {usercount: '3'}
-        }
+  constructor(props){
+    super(props)
+    this.state = {usercount: '3'}
+  }
 
-        componentDidMount() {
-                //                this.setState({usercount: firebaseApp.database().ref("numberofusers").set('100')})
+  componentDidMount() {
+    // this.setState({usercount:4})
+    var uc = UCRef.on('value', snapshot => {
+      this.setState({usercount: snapshot.val()});
+    });
+      
+    //  UCRef.on('value',function(snapshot){return(snapshot.val())})
+    this.setState({usercount:uc})
+  }
 
-        }
-        
-        render(){
-                return (
-                        <Badge>        
-                                {this.state.usercount}
-                        </Badge> 
-                )
+  render(){
+    return (
+      <Badge>        
+        {this.state.usercount}
+      </Badge> 
+    )
 
-        }
+  }
 }
 
 export default Radium(UserCount);
