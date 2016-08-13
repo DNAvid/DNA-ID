@@ -1,6 +1,6 @@
 var Radium = require('radium');
 import React, { PropTypes as T } from 'react'
-import { Button, Thumbnail, Image, Table, ProgressBar,  Jumbotron, Nav, Navbar, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
+import { Label, Button, Thumbnail, Image, Table, ProgressBar,  Jumbotron, Nav, Navbar, NavItem, NavDropdown, MenuItem, Grid, Row, Col } from 'react-bootstrap'
 import styles from './styles.module.css'
 import inlineStyles from './styles.module.js'
 import SocialShareButtons from '../../containers/ShareButtons/ShareButtons.js'
@@ -32,6 +32,7 @@ export class Container extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
+              <NavItem  target="_blank" eventKey={2} href="http://bb.dnavid.com" ><span style={{color:'white'}}>Forum</span></NavItem>
               <NavItem  target="_blank" eventKey={2} href="https://medium.com/@davidweisss/f0e47e6c1173" ><span style={{color:'white'}}>But, "Why?"</span></NavItem>
             </Nav>
           </Navbar.Collapse>
@@ -39,7 +40,7 @@ export class Container extends React.Component {
         <Jumbotron style={inlineStyles.jumbotronStyle}>
           {children}
           <div style={{width:'100%', textAlign:'center'}}>
-            <UserCount/> Humans and counting<br></br><br></br>
+            <UserCount/> Humans and counting<br></br><br></br><br></br>
             <span>Help grow the community by sharing with friends and colleagues</span> 
             <SocialShareButtons/>
           </div>
@@ -49,40 +50,40 @@ export class Container extends React.Component {
         <Grid>
           <Row>
             <Col md={4}>
-              <h2> 
-                Claim your DNA ID
-              </h2> 
-              <p>
-                Protect your DNA 
-              </p>
-              <p>
-                Upload your DNA file or import from 3rd party
-              </p>
-              <p>
-                Request access to your DNA data (vendor, doctor, research study, etc.). 
-              </p>
-              <p>
-                <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Learn more</Button>&nbsp;
-              </p>
-
-            </Col>
-            <Col md={4}>
               <h2>
                 Join the discussion
               </h2> 
               <p>
-                One DNA is one vote, no matter who or where you are
+                You have a DNA, no matter who or where you are, have your say!
               </p>
               <p>
-                ratings of DNA providers 23andMe, AncestryDNA, clinical, etc.
-                review services and policies towards privacy and control of your DNA. 
+                Join the global discussion about how we want our personal DNA data to be managed and used
               </p> 
               <p>
-                <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Learn more</Button>&nbsp;
+                <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Have your say</Button>&nbsp;
               </p>
 
             </Col>
-            <Col xs={6} md={4}>
+            <Col md={4}>
+              <h2> 
+                Claim your DNA ID  
+              </h2> <Label>Coming soon</Label><br></br>
+              <p> Store your genome data</p>
+              <p> Decide what can be used in your genome and for what</p>
+              <p> Safe sharing: anonymise, share only parts, hide parts, of your genome</p>
+              <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Help define the product</Button>
+            </Col>
+            <Col md={4}>
+              <h2> 
+                100% open source 
+              </h2> 
+              <p> Everything is open to contributons, even this page.</p>
+              <p> Help shape the first genome management system that belongs to all</p>
+              <p> Tackle the hard problems to create a scalable system of access that repects the individual. Unlock our DNA!</p>
+              <Button target="_blank" bsStyle="default" href="https://github.com/DNAvid">Join the open source project</Button>
+            </Col>
+            {/*
+              <Col xs={6} md={4}>
               <Thumbnail src="https://storage.googleapis.com/dnavid/dnavidbitcoinaddress.png" alt="242x200">
                 <h3>Support DNAvID! </h3>
                 <p>Scan Bitcoin Address with Bitcoin Wallet App.</p>
@@ -90,7 +91,8 @@ export class Container extends React.Component {
                   <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Learn more</Button>&nbsp;
                 </p>
               </Thumbnail>
-            </Col>
+              </Col>
+              */}
           </Row>
         </Grid>
         <hr/>
@@ -98,7 +100,7 @@ export class Container extends React.Component {
 
         <div style={{width:'100%', textAlign:'center'}}>
           <footer>
-            <p>© 2016 DNAvID</p>
+            <p>© 2016 DNAvID &mdash; <a href="https://angel.co/dnavid" target="_blank">Company profile</a></p>
           </footer>
         </div>
       </div>
