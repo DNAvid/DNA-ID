@@ -7,7 +7,7 @@ export const makeRoutes = () => {
   const main = makeMainRoutes();
 
   return (
-    <Route path=''>
+    <Route path="">
       {main}
     </Route>
   )

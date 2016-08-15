@@ -14,5 +14,24 @@ exports.toolbar = {
   display: 'inline-block',
 }
 exports.title = {
-        fontFamily:'Varela Round',
+        fontFamily:'Varela Round, "Helvetica Neue", Helvetica, Arial, sans-serif',
 }
+
+exports.jumbotronStyle = {
+            backgroundColor: 'rgba(41, 128, 185,0.1)',
+            maxWidth: '100%',
+            '@media (minWidth: 768px)': {
+                    width: '750px',
+            }
+}
+
+exports.buttonPrimary = {
+  marginTop: '30px', 
+  marginBottom: '10px'
+};
+
+exports.buttonSecondary= {
+  marginTop: '10px', 
+  marginBottom: '20px'
+};
+

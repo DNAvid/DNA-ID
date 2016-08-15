@@ -1,8 +1,11 @@
 var Radium = require('radium');
 import React, { PropTypes as T } from 'react'
-import {ButtonToolbar, Button} from 'react-bootstrap'
+import {ButtonToolbar, Button, Jumbotron} from 'react-bootstrap'
 import AuthService from 'utils/AuthService'
-import styles from './styles.module.js'
+import styles from './styles.module'
+import UserCount from '../../../containers/UserCount/UserCount'
+import SocialShareButtons from '../../../containers/ShareButtons/ShareButtons'
+import FeaturesGridLogin from '../../../containers/FeaturesGridLogin/FeaturesGridLogin' 
 
 export class Login extends React.Component {
   static contextTypes = {
@@ -17,13 +20,28 @@ export class Login extends React.Component {
   render() {
     const { auth } = this.props
     return (
-      <div style={styles.root}>
-        <h2 style={styles.title} >Claim your genome</h2>
-        <br/>
-        <ButtonToolbar style={styles.toolbar}>
-          <Button bsSize="large" bsStyle="info" onClick={auth.login.bind(this)}>Stay informed</Button>
-          <Button bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
-        </ButtonToolbar>
+      <div>
+        <Jumbotron style={styles.jumbotronStyle}>
+          <div style={styles.root}>
+            <h1 style={styles.title} >Claim your genome</h1>
+            <ButtonToolbar style={styles.toolbar}>
+              <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
+            </ButtonToolbar>
+            <p>
+              <UserCount/> Humans and counting
+            </p>
+            <p>or<br />
+            <ButtonToolbar style={styles.toolbar}>
+              <Button style={styles.buttonSecondary} block bsSize="default" bsStyle="info" onClick={auth.login.bind(this)}>Stay informed</Button>
+            </ButtonToolbar>
+            </p>
+            <div style={{width:'100%', textAlign:'center'}}>
+              <span>Help grow the community by sharing with friends and colleagues</span> 
+              <SocialShareButtons/>
+            </div>
+          </div>
+        </Jumbotron>
+        <FeaturesGridLogin />
       </div>
     )
   }

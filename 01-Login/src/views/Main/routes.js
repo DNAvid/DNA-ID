@@ -6,12 +6,12 @@ import Home from './Home/Home'
 import Login from './Login/Login'
 
 var options = {
-        theme: {
-                logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
-        },
-        languageDictionary: {
-                title: 'Login or Signup'
-        }
+  theme: {
+    logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
+  },
+  languageDictionary: {
+    title: 'Login or Signup'
+  }
 };
 
 const auth = new AuthService('vmpiu8s34kIOU3E9ntS0yWtOkGnBuRZm', 'dnavid.auth0.com', options);
@@ -24,13 +24,13 @@ const requireAuth = (nextState, replace) => {
 }
 
 export const makeMainRoutes = () => {
-        return (
-          <Route path="/" component={Container} auth={auth}>
-                  <IndexRedirect to="/home" />
-                  <Route path="home" component={Home} onEnter={requireAuth} />
-                  <Route path="login" component={Login} />
-                  <Route path="access_token=:token" component={Login} /> //to prevent router errors
-          </Route>
+  return (
+    <Route path="/" component={Container} auth={auth}>
+      <IndexRedirect to="/home" />
+      <Route path="home" component={Home} onEnter={requireAuth} />
+      <Route path="login" component={Login} />
+      <Route path="access_token=:token" component={Login} /> //to prevent router errors
+    </Route>
 
   )
 }
