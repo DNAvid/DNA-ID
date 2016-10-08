@@ -4,9 +4,6 @@ import { Jumbotron } from 'react-bootstrap'
 import styles from './styles.module.css'
 import inlineStyles from './styles.module.js'
 import Footer from '../../containers/Footer/Footer.js' 
-import FeaturesGridLogin from '../../containers/FeaturesGridLogin/FeaturesGridLogin' 
-import HeaderLogin from '../../containers/HeaderLogin/HeaderLogin' 
-
 
 export class Container extends React.Component {
   static contextTypes = {
@@ -23,9 +20,7 @@ export class Container extends React.Component {
     return (
       <div>
 
-        <HeaderLogin />
-
-          {children}
+        {children}
 
         <Footer />
 
