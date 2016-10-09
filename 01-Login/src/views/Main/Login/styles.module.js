@@ -26,6 +26,10 @@ exports.title = {
         fontFamily:'Varela Round, "Helvetica Neue", Helvetica, Arial, sans-serif',
 }
 
+exports.subtitle = {
+        fontFamily:'"Helvetica Neue", Helvetica, Arial, sans-serif',
+}
+
 exports.jumbotronStyle = {
             backgroundColor: 'rgba(41, 128, 185,0.1)',
             maxWidth: '100%',
