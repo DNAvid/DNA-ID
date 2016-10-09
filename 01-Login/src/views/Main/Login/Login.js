@@ -40,7 +40,8 @@ export class Login extends React.Component {
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} >Claim your genome</h1>
+            <h1 style={styles.title} > DNAvID </h1>
+            <h1 style={styles.subtitle} > Family DNA registry </h1>
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
             </ButtonToolbar>
