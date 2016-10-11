@@ -41,20 +41,20 @@ export class Login extends React.Component {
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
             <h1 style={styles.title} > DNAvID </h1>
-            <h2 style={styles.subtitle} > Family DNA registry </h2>
+            <h2 style={styles.subtitle} > Family DNA Network </h2>
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
             </ButtonToolbar>
             <p>
               <UserCount/> Humans and counting
             </p>
-            <p>or<br />
-              <ButtonToolbar style={styles.toolbar}>
-                <Button style={styles.buttonSecondary} block bsSize="default" bsStyle="info" onClick={auth.login.bind(this)}>Stay informed</Button>
-              </ButtonToolbar>
+            <p>
+              <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna/">
+               Terms of use
+              </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
-              <span>Help grow the community by sharing with friends and colleagues</span> 
+              <span>Help others know by sharing with family, friends and colleagues! The more we are, the better for all. </span> 
               <SocialShareButtons/>
             </div>
           </div>
