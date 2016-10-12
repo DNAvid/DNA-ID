@@ -43,7 +43,7 @@ export class Login extends React.Component {
             <h1 style={styles.title} > Family DNA Network </h1>
             <h2 style={styles.subtitle} > Discuss, protect, and use our DNA information </h2>
             <ButtonToolbar style={styles.toolbar}>
-              <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join the Community</Button>
+              <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
             <p>
               <UserCount/> Humans and counting
