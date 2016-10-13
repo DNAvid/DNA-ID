@@ -41,7 +41,7 @@ var config = getConfig({
         html: function (context) {
                 return {
                         'index.html': context.defaultTemplate({
-                                title: 'DNAvID - Claim your genome',
+                                title: 'DNAvID - Family DNA Network',
                                 publicPath: isDev ? '' : '',
                                 meta: {
                                         'name': 'DNAvID - Family DNA Network',
