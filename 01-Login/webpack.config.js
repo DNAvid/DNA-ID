@@ -44,8 +44,8 @@ var config = getConfig({
                                 title: 'DNAvID - Claim your genome',
                                 publicPath: isDev ? '' : '',
                                 meta: {
-                                        'name': 'DNAvID - It\'s my genome',
-                                        'description': 'Global community for taking back control and ownership of our DNA'
+                                        'name': 'DNAvID - Family DNA Network',
+                                        'description': 'Discuss, protect, and use our DNA information'
                                 },
                                 html:addBodyHtml,
                                 head:addHeadHtml
