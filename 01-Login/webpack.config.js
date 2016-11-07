@@ -44,8 +44,8 @@ var config = getConfig({
                                 title: 'DNAvID - Family DNA Network',
                                 publicPath: isDev ? '' : '',
                                 meta: {
-                                        'name': 'DNAvID - Family DNA Network',
-                                        'description': 'Discuss, protect, and use our DNA information'
+                                        'name': 'Discuss, share, and use our DNA information',
+                                        'description': 'for our own benefit and under our own terms'
                                 },
                                 html:addBodyHtml,
                                 head:addHeadHtml
