@@ -41,7 +41,7 @@ var config = getConfig({
         html: function (context) {
                 return {
                         'index.html': context.defaultTemplate({
-                                title: 'DNAvID - Family DNA Network',
+                                title: 'DNAvID - Discuss, share, and use our DNA information',
                                 publicPath: isDev ? '' : '',
                                 meta: {
                                         'name': 'Discuss, share, and use our DNA information',
