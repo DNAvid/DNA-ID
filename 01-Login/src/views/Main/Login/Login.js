@@ -49,7 +49,7 @@ export class Login extends React.Component {
               <UserCount/> Humans and counting
             </p>
             <p>
-              <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna/" target="_blank">
+              <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
                Terms of use
               </a>
             </p>
