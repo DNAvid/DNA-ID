@@ -40,8 +40,8 @@ export class Login extends React.Component {
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} > Discuss, protect, and use our DNA information </h1>
-            <h2 style={styles.subtitle} > For or own benefit and under our own terms </h2>
+            <h1 style={styles.title} > Discuss, share, and use our DNA information </h1>
+            <h2 style={styles.subtitle} > For our own benefit and under our own terms </h2>
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
@@ -50,7 +50,7 @@ export class Login extends React.Component {
             </p>
             <p>
               <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
-               Terms of use of my DNA information
+               Terms of use for my DNA information
               </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
