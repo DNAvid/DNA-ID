@@ -1,5 +1,5 @@
 var Radium = require('radium');
-import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Jumbotron, ButtonToolbar, Button } from 'react-bootstrap'
+import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Jumbotron, ButtonToolbar, Button, ResponsiveEmbed } from 'react-bootstrap'
 import React, { PropTypes as T } from 'react'
 import AuthService from 'utils/AuthService'
 import styles from './styles.module'
@@ -42,6 +42,11 @@ export class Login extends React.Component {
           <div style={styles.root}>
             <h1 style={styles.title} > Discuss, share, and use our DNA information </h1>
             <h2 style={styles.subtitle} > For our own benefit and under our own terms </h2>
+          <div style={{width: 'auto', height: 'auto'}}>
+              <ResponsiveEmbed a16by9>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TliA5fpGxgc" frameborder="0" allowfullscreen></iframe>
+              </ResponsiveEmbed>
+          </div>
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
@@ -54,7 +59,7 @@ export class Login extends React.Component {
               </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
-              <span>Help others know by sharing with family, friends, and colleagues! The more we are, the better for all. </span> 
+              <span>Help others join by sharing with family, friends, and colleagues! The more we are, the better for all. </span> 
               <SocialShareButtons/>
             </div>
           </div>
