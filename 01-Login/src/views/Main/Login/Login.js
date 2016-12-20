@@ -44,7 +44,7 @@ export class Login extends React.Component {
             <h2 style={styles.subtitle} > For our own benefit and under our own terms </h2>
           <div style={{width: 'auto', height: 'auto'}}>
               <ResponsiveEmbed a16by9>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/TliA5fpGxgc" frameborder="0" allowfullscreen></iframe>
+                <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameborder="0" allowfullscreen></iframe>
               </ResponsiveEmbed>
           </div>
             <ButtonToolbar style={styles.toolbar}>
