@@ -66,9 +66,11 @@
     "classnames": "^2.2.5",
     "firebase": "^3.2.1",
     "jwt-decode": "^2.0.1",
+    "radium": "^0.18.1",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.0-rc.1",
     "react-dom": "^15.3.1",
-    "react-router": "^2.8.0"
+    "react-router": "^2.8.0",
+    "react-share": "^1.11.0"
   }
 }

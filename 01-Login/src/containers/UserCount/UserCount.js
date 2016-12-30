@@ -1,5 +1,5 @@
+import React from 'react';
 var Radium = require('radium');
-import React from 'react'
 import {Badge} from 'react-bootstrap'
 var firebase = require('firebase')
 
