@@ -1,32 +1,26 @@
 import React from 'react';
 var Radium = require('radium');
 import {Badge} from 'react-bootstrap'
-var firebase = require('firebase')
+var axios = require('axios');
 
 
-var config = {
-  apiKey: "AIzaSyDcVtH8AkSWUrEwjeQEWX2GtyaaX3uzpH8",
-  authDomain: "dnavid-c48b6.firebaseapp.com",
-  databaseURL: "https://dnavid-c48b6.firebaseio.com",
-  storageBucket: "dnavid-c48b6.appspot.com",
+var NbUsers = function() {
+    return axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/express-with-mongodb");
 };
-var firebaseApp = firebase.initializeApp(config);
-var UCRef = firebaseApp.database().ref("numberofusers")
+
+var promiseObj = NbUsers();
 
 class UserCount extends React.Component{
   constructor(props){
     super(props)
-    this.state = {usercount: '3'}
+    this.state = {usercount: '...'}
   }
 
   componentDidMount() {
-    // this.setState({usercount:4})
-    var uc = UCRef.on('value', snapshot => {
-      this.setState({usercount: snapshot.val()});
+    promiseObj.then(data => {
+      this.setState({usercount: data.data.n}); 
     });
-      
-    //  UCRef.on('value',function(snapshot){return(snapshot.val())})
-    this.setState({usercount:uc})
+
   }
 
   render(){
