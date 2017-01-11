@@ -6,8 +6,10 @@ import styles from './styles.module'
 import UserCount from '../../../containers/UserCount/UserCount'
 import SocialShareButtons from '../../../containers/ShareButtons/ShareButtons'
 import FeaturesGridLogin from '../../../containers/FeaturesGridLogin/FeaturesGridLogin' 
+import FooterLogin from '../../../containers/FooterLogin/FooterLogin.js' 
 
 export class Login extends React.Component {
+  // These are checks
   static contextTypes = {
     router: T.object
   }
@@ -17,7 +19,10 @@ export class Login extends React.Component {
     auth: T.instanceOf(AuthService)
   }
 
+
   render() {
+    // See trick in Container.js to pass auth as props. 
+    // Why not use the normal way of passing props??
     const { auth } = this.props
     return (
       <div>
@@ -32,26 +37,31 @@ export class Login extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem  target="_blank" eventKey={2} href="http://bb.dnavid.com" ><span style={{color:'white'}}>Forum</span></NavItem>
-              <NavItem  target="_blank" eventKey={2} href="https://medium.com/@davidweisss/f0e47e6c1173" ><span style={{color:'white'}}>Blog</span></NavItem>
-              <NavItem  eventKey={3} ><span style={{color:'white'}} onClick={auth.login.bind(this)}>Login</span></NavItem>
+              <NavItem  target="_blank" eventKey={1} href="http://bb.dnavid.com" ><span style={{color:'white'}}>Engage</span></NavItem>
+              <NavItem  target="_blank" eventKey={2} href="https://blog.dnavid.com" ><span style={{color:'white'}}>Blog</span></NavItem>
+              <NavItem  target="_blank" eventKey={3} href="http://bb.dnavid.com/t/faq-frequently-asked-questions/46" ><span style={{color:'white'}}>FAQ</span></NavItem>
+              {/* Binds login functions to keep this context
+                  https://auth0.com/docs/quickstart/spa/react/01-login
+                */} 
+              <NavItem  eventKey={4} ><span style={{color:'white'}} onClick={auth.login.bind(this)}>Login</span></NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} > Discuss, share, and use our DNA information </h1>
-            <h2 style={styles.subtitle} > For our own benefit and under our own terms </h2>
-          <div style={{width: 'auto', height: 'auto'}}>
+            <h1 style={styles.title} > Put our DNA to work</h1>
+            <h2 style={styles.subtitle} > for our own benefit and under our own terms </h2>
+            {/* <div style={{width: 'auto', height: 'auto'}}>
               <ResponsiveEmbed a16by9>
-                <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameborder="0" allowfullscreen></iframe>
+                <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameBorder="0" allowFullScreen></iframe>
               </ResponsiveEmbed>
-          </div>
+              </div> */}
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
             <p>
-              <UserCount/> Humans and counting
+              <UserCount/> Humans and counting<br/> 
+                <small>(first 50 get first in line for new features, free storage, etc. just saying...)</small>
             </p>
             <p>
               <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
@@ -59,12 +69,13 @@ export class Login extends React.Component {
               </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
-              <span>Help others join by sharing with family, friends, and colleagues! The more we are, the better for all. </span> 
+              <span> Think about this: my DNA becomes waaay more useful as others join. </span> 
               <SocialShareButtons/>
             </div>
           </div>
         </Jumbotron>
         <FeaturesGridLogin />
+        <FooterLogin />
       </div>
     )
   }

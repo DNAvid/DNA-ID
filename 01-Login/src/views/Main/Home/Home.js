@@ -1,8 +1,9 @@
 var Radium = require('radium');
-import { Image, Nav, NavItem, Navbar, NavDropdown, MenuItem} from 'react-bootstrap'
+import { Panel, Image, Nav, NavItem, Navbar, NavDropdown, MenuItem} from 'react-bootstrap'
 import React, { PropTypes as T } from 'react'
+import {Link} from 'react-router'
 import {Button} from 'react-bootstrap'
-import AuthService from 'utils/AuthService'
+import AuthService from '../../../utils/AuthService'
 import styles from './styles.module.js'
 
 export class Home extends React.Component {
@@ -51,25 +52,29 @@ export class Home extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem  target="_blank" eventKey={1} href="http://bb.dnavid.com" ><span style={{color:'white'}}>Forum</span></NavItem>
-              <NavItem  target="_blank" eventKey={2} href="https://blog.dnavid.com" ><span style={{color:'white'}}>Blog</span></NavItem>
-              <NavItem  eventKey={3} >
-                <span onClick={this.logout.bind(this)} style={{color:'white'}}>Logout</span>
+              <NavItem eventKey={1}>
+                <Link style={{color:'white'}} to="/home/family">Family</Link>
+              </NavItem>
+              <NavItem eventKey={2}>
+                <Link style={{color:'white'}} to="/home/share">Share</Link>
+              </NavItem>
+              <NavItem eventKey={3}>
+                <Link style={{color:'white'}} to="/home/DNA">DNA</Link>
               </NavItem>
               <NavItem  eventKey={4} >
-                <span style={{color:'white'}}>
+                <Link style={{color:'white'}} to="/home/profile">
                   <Image src={profile.picture} style={{height:"17px"}} />&nbsp;{profile.name}
-                </span>
+                </Link>
+              </NavItem>
+              <NavItem  eventKey={5}>
+                <span onClick={this.logout.bind(this)} style={{color:'white'}}>Logout</span>
               </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Nav style={{marginTop:"50px", marginLeft:"25px"}} bsStyle="pills" activeKey={1} onSelect={handleSelect}>
-          <NavItem eventKey={1} >Family</NavItem>
-          <NavItem eventKey={2} title="Item">DNA</NavItem>
-          <NavItem eventKey={3} >Share</NavItem>
-          <NavItem eventKey={4} >Profile</NavItem>
-        </Nav>
+        <Panel style={{marginTop:'60px'}}> 
+          {this.props.children}
+        </Panel>
       </div>
     )
   }

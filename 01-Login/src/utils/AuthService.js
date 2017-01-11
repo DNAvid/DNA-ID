@@ -5,6 +5,9 @@ import { browserHistory } from 'react-router'
 
 export default class AuthService extends EventEmitter {
   constructor(clientId, domain, options) {
+    // When used in a constructor, the super keyword appears alone and must be
+    // used before the this keyword can be used.  This keyword can also be used
+    // to call functions on a parent object.
     super()
     // Configure Auth0
     this.lock = new Auth0Lock(clientId, domain, {
@@ -13,6 +16,10 @@ export default class AuthService extends EventEmitter {
         responseType: 'token'
       }
     })
+    // The bind() method creates a new function that, when called, has its this
+    // keyword set to the provided value, with a given sequence of arguments
+    // preceding any provided when the new function is called.
+    //
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     // Add callback for lock `authorization_error` event

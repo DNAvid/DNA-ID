@@ -1,11 +1,11 @@
 import React from 'react';
 var Radium = require('radium');
-import {Badge} from 'react-bootstrap'
+import {Label} from 'react-bootstrap'
 var axios = require('axios');
 
 
 var NbUsers = function() {
-    return axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/express-with-mongodb");
+  return axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/express-with-mongodb");
 };
 
 var promiseObj = NbUsers();
@@ -18,16 +18,17 @@ class UserCount extends React.Component{
 
   componentDidMount() {
     promiseObj.then(data => {
-      this.setState({usercount: data.data.n}); 
+      this.setState({usercount: data.data.nbUsers}); 
     });
-
   }
 
   render(){
     return (
-      <Badge>        
-        {this.state.usercount}
-      </Badge> 
+      <h3>
+        <Label bsStyle="info">        
+          {this.state.usercount}
+        </Label>
+      </h3>
     )
 
   }
