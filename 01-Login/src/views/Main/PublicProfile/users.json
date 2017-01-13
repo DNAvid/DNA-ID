@@ -1,0 +1,43 @@
+{"DNAvid":
+  {
+    "picture":"https://storage.googleapis.com/dnavid/DNAvid.jpg",
+    "bio":"I'm healthy. I'm curious. Cancer runs in my family. My therapist, who also saw my brother, says our back is longer than usual, causing lower back pain. Could it be the DNA, he asks.",
+    "profile":"auth0api",
+    "family":{
+      "50%":{ 
+        "Grandchildren":[],
+        "Children": ["Lea","Ari","Sam"],
+        "Siblings": ["Ilan","Yael"],
+        "Parents": ["Benny","Vivianne"]
+      },
+      "25%":{ 
+        "Nephews": [],
+        "Cousins": ["Daniel","Arturo","Sonia","Alejandro","Alan"],
+        "Half-siblings":[],
+        "Uncles": ["Jaime","Jacobo","Raul"],
+        "Grandparents": ["Danielle"]
+      }
+    },
+    "dataSources":{
+      "23andme":"https://storage.googleapis.com/dnavid/genome_David_Weiss_v4_Full_20170112164503.zip",
+      "ancestryDNA":"filenameAncestryDNA"
+    },
+    "sharingPreferences":
+    {
+      "Financial compensation": [
+        "From for profit research",
+        "From academic research"
+      ],
+      "Return of results": [
+        "I want to be informed of results obtained about me that impact my health"
+      ],
+      "Participation in research": [
+        "I am available for questions from researchers who are analysing my DNA information"
+      ],
+      "Privacy": [
+        ""
+      ]
+    },
+    "Ilan":{"profile":"auth0api"}
+  }
+}

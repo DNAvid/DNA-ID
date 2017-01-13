@@ -14,15 +14,15 @@ export class FeaturesGridLogin extends React.Component {
             </h3> 
             <p> Invite family to join my DNA network</p>
             <p> Store my DNA information</p>
-            <p> Control how my DNA is used. Do I:
+            <p> Control how my DNA is used:</p>
+
               <ul>
                 <li> get paid? </li>
                 <li> participate in research? </li>
                 <li> get updated on research about me?</li>
                 <li> want to limit sharing of my DNA to non-disease info?</li>
               </ul>
-            </p>
-            <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/t/define-v1-of-dna-id/">Check the status</Button>
+              <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/t/define-v1-of-dna-id/">Check the status</Button>
           </Col>
           <Col md={4}>
             <h3> 

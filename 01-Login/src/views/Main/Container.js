@@ -15,7 +15,6 @@ export class Container extends React.Component {
         auth: this.props.route.auth //sends auth instance to children
       })
     }
-
     return (
       <div>
         {children}

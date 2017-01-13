@@ -23,7 +23,7 @@ export class Login extends React.Component {
   render() {
     // See trick in Container.js to pass auth as props. 
     // Why not use the normal way of passing props??
-    const { auth } = this.props
+    const auth = this.props.auth
     return (
       <div>
         <Navbar fixedTop style={styles.navbarStyle}>
@@ -57,19 +57,17 @@ export class Login extends React.Component {
               </ResponsiveEmbed>
               </div> */}
             <ButtonToolbar style={styles.toolbar}>
-              <Button style={styles.buttonPrimary} lock bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
+              <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
-            <p>
               <UserCount/> Humans and counting<br/> 
                 <small>(first 50 get first in line for new features, free storage, etc. just saying...)</small>
-            </p>
             <p>
               <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
                Terms of use for my DNA information
               </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
-              <span> Think about this: my DNA becomes waaay more useful as others join. </span> 
+              <span> Think about this: "my DNA becomes waaay more useful as others join", then share! </span> 
               <SocialShareButtons/>
             </div>
           </div>

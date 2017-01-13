@@ -10,12 +10,17 @@ export default class AuthService extends EventEmitter {
     // to call functions on a parent object.
     super()
     // Configure Auth0
-    this.lock = new Auth0Lock(clientId, domain, {
-      auth: {
-        redirectUrl: `${window.location.origin}/login`,
-        responseType: 'token'
-      }
-    })
+    this.lock = new Auth0Lock(clientId, domain, 
+      Object.assign(options,
+        {
+          auth: 
+          {
+            redirectUrl: `${window.location.origin}/login`,
+            responseType: 'token'
+          }
+        }
+      )
+    )
     // The bind() method creates a new function that, when called, has its this
     // keyword set to the provided value, with a given sequence of arguments
     // preceding any provided when the new function is called.
