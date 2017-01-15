@@ -5,7 +5,8 @@ import AuthService from 'utils/AuthService'
 import Container from './Container'
 import Home from './Home/Home'
 import Login from './Login/Login'
-import PublicProfile from './PublicProfile/PublicProfile'
+import Public from './Public/Public'
+import PublicProfile from './Public/PublicProfile'
 import Family from './Home/Family/Family'
 import DNA from './Home/DNA/DNA'
 import Share from './Home/Share/Share'
@@ -35,9 +36,7 @@ const requireAuth = (nextState, replace) => {
     replace({ pathname: '/login' })
   }
 }
-debugger;
 export const makeMainRoutes = () => {
-  debugger;
   return (
     <Route path="/" component={Container} auth={auth}>
       <IndexRedirect to="home" />
@@ -48,7 +47,9 @@ export const makeMainRoutes = () => {
         <Route path="share" component={Share}/>
         <Route path="profile" component={Profile}/>
       </Route>
-      <Route path=":user" component={PublicProfile}/>
+      <Route path="public" component={Public}>
+        <Route path=":user" component={PublicProfile}/>
+      </Route>
     </Route>
   )
 }
