@@ -12,7 +12,7 @@
       },
       "25%":{ 
         "Nephews": [],
-        "Cousins": ["Daniel","Arturo","Sonia","Alejandro","Alan"],
+        "Cousins": ["Daniel","Arturo","Sonia","Josh","Alex","Alejandro","Alan","Arela"],
         "Half-siblings":[],
         "Uncles": ["Jaime","Jacobo","Raul"],
         "Grandparents": ["Danielle"]
@@ -25,8 +25,7 @@
     "sharingPreferences":
     {
       "Financial compensation": [
-        "From for profit research",
-        "From academic research"
+        "From for profit research"
       ],
       "Return of results": [
         "I want to be informed of results obtained about me that impact my health"

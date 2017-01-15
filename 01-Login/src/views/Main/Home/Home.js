@@ -10,11 +10,9 @@ export class Home extends React.Component {
   static contextTypes = {
     router: T.object
   }
-
   static propTypes = {
     auth: T.instanceOf(AuthService)
   }
-
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -24,21 +22,15 @@ export class Home extends React.Component {
       this.setState({profile: newProfile})
     })
   }
-
   logout(){
     this.props.auth.logout()
     this.context.router.push('/login');
   }
-
-
   render(){
-
     function handleSelect(selectedKey) {
       alert('selected ' + selectedKey);
     }
-
     const { profile } = this.state
-
     return (
       <div>
         <Navbar fixedTop style={styles.navbarStyle}>
@@ -72,7 +64,7 @@ export class Home extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Panel style={{marginTop:'60px'}}> 
+        <Panel style={{marginTop:'49px'}}> 
           {this.props.children}
         </Panel>
       </div>

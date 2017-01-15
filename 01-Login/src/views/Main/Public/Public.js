@@ -1,7 +1,7 @@
 var Radium = require('radium');
 import { Link } from 'react-router'
 import FooterLogin from '../../../containers/FooterLogin/FooterLogin.js' 
-import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Panel, Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import React, { PropTypes as T } from 'react'
 import AuthService from 'utils/AuthService'
 import styles from '../Login/styles.module'
@@ -46,7 +46,9 @@ class Public extends React.Component{
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-            {this.props.children}
+            <Panel style={{marginTop:'49px'}}> 
+              {this.props.children}
+            </Panel>
             <FooterLogin/>
           </div>
     )
