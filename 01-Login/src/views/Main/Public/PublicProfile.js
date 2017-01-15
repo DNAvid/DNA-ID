@@ -25,7 +25,7 @@ class DNAProfiles extends React.Component {
           </Media.Left>
           <Media.Body>
             <Media.Heading>23andMe genotyping</Media.Heading>
-            <p>SNP genotyping from <a target="_blank" href="https://www.23andme.com">23 and Me</a>. Done on Illumina Illumina HumanOmniExpress-24 format chipwith custom probes.</p>
+            <p>SNP genotyping from <a target="_blank" href="https://www.23andme.com">23 and Me</a>. Done on Illumina HumanOmniExpress-24 format chipwith custom probes.</p>
               <Button href={this.props.file}>Download</Button>
           </Media.Body>
         </Media>
@@ -67,16 +67,16 @@ export class PublicProfile extends React.Component{
           </Row>
           <Row className="show-grid">
             <Col xs={12}>
-              <h4>You can use my DNA, but you must respect these conditions</h4> 
-              <WriteReport sharingPrefs={sharingPrefs} questions={questions} />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col xs={12}>
               <h4>
                 Family 
               </h4> 
           <PercentFamily />
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col xs={12}>
+              <h4>You can use my DNA, but you must respect these conditions</h4> 
+              <WriteReport sharingPrefs={sharingPrefs} questions={questions} />
             </Col>
           </Row>
           <Row className="show-grid">

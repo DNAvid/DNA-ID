@@ -1,7 +1,7 @@
 {"DNAvid":
   {
     "picture":"https://storage.googleapis.com/dnavid/DNAvid.jpg",
-    "bio":"I'm healthy. I'm curious. Cancer runs in my family. My therapist, who also saw my brother, says our back is longer than usual, causing lower back pain. Could it be the DNA, he asks.",
+    "bio":"I'm healthy. I'm curious. My family physiotherapist, says that our spine size and shape causes our lower back pain. Could it be the DNA, he asks. Cancer runs in my family.",
     "profile":"auth0api",
     "family":{
       "50%":{ 
@@ -34,7 +34,7 @@
         "I am available for questions from researchers who are analysing my DNA information"
       ],
       "Privacy": [
-        ""
+        "You will not use my results to analyse anyone elese from my family"
       ]
     },
     "Ilan":{"profile":"auth0api"}

@@ -8,7 +8,7 @@ exports.brandStyle = {
         verticalAlign: 'middle',
 };
 exports.root = {
-            paddingTop: '100px',
+            paddingTop: '40px',
             paddingBottom: '70px',
             marginLeft: '50px',
             marginRight: '50px',
@@ -31,7 +31,7 @@ exports.subtitle = {
 }
 
 exports.jumbotronStyle = {
-            backgroundColor: 'rgba(41, 128, 185,0.1)',
+            backgroundColor: 'whitesmoke',
             maxWidth: '100%',
             '@media (minWidth: 768px)': {
                     width: '750px',

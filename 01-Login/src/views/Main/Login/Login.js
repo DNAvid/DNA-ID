@@ -1,5 +1,5 @@
 var Radium = require('radium');
-import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Jumbotron, ButtonToolbar, Button, ResponsiveEmbed } from 'react-bootstrap'
+import { Link, Nav, Navbar, NavItem, NavDropdown, MenuItem, Jumbotron, ButtonToolbar, Button, ResponsiveEmbed } from 'react-bootstrap'
 import React, { PropTypes as T } from 'react'
 import AuthService from 'utils/AuthService'
 import styles from './styles.module'
@@ -49,26 +49,26 @@ export class Login extends React.Component {
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} > Put our DNA to work</h1>
-            <h2 style={styles.subtitle} > for our own benefit and under our own terms </h2>
+            <h1 style={styles.title} > Hi: check <a href="http://dev.dnavid.com/#/public/DNAvid?utm_source=home-page"><h1>my DNA ID</h1></a></h1>
             {/* <div style={{width: 'auto', height: 'auto'}}>
               <ResponsiveEmbed a16by9>
                 <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameBorder="0" allowFullScreen></iframe>
               </ResponsiveEmbed>
               </div> */}
             <ButtonToolbar style={styles.toolbar}>
-              <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
+              <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Get yours</Button>
             </ButtonToolbar>
               <UserCount/> Humans and counting<br/> 
-                <small>(first 50 get first in line for new features, free storage, etc. just saying...)</small>
+            <h2 style={styles.subtitle} >A DNA social network for family and friends</h2>
+                <small>Due to cost, up to a maximum 50 persons will be admitted in the first phase. Just saying...</small>
             <p>
               <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
                Terms of use for my DNA information
               </a>
             </p>
             <div style={{width:'100%', textAlign:'center'}}>
-              <span> Think about this: "my DNA becomes waaay more useful as others join", then share! </span> 
               <SocialShareButtons/>
+              <span> Think about this: "my DNA becomes waaay more useful as others join", then share! </span> 
             </div>
           </div>
         </Jumbotron>
