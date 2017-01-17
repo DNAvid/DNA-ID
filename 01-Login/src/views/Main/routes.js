@@ -42,6 +42,7 @@ export const makeMainRoutes = () => {
       <IndexRedirect to="home" />
       <Route path="login" component={Login} />
       <Route path="home" component={Home} onEnter={requireAuth}>
+        <IndexRedirect to="profile" />
         <Route path="family" component={Family}/>
         <Route path="DNA" component={DNA}/>
         <Route path="share" component={Share}/>

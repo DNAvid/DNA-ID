@@ -49,7 +49,7 @@ export class Login extends React.Component {
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} > Hi: check <a href="http://dev.dnavid.com/#/public/DNAvid?utm_source=home-page"><h1>my DNA ID</h1></a></h1>
+            <h1 style={styles.title} > Hi: check <a href="https://dnavid.com/#/public/DNAvid?utm_source=home-page"><h1>my DNA ID</h1></a></h1>
             {/* <div style={{width: 'auto', height: 'auto'}}>
               <ResponsiveEmbed a16by9>
                 <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameBorder="0" allowFullScreen></iframe>

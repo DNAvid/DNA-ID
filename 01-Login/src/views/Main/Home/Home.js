@@ -5,6 +5,8 @@ import {Link} from 'react-router'
 import {Button} from 'react-bootstrap'
 import AuthService from '../../../utils/AuthService'
 import styles from './styles.module.js'
+import Profile from './Profile/Profile'
+
 
 export class Home extends React.Component {
   static contextTypes = {
@@ -27,9 +29,7 @@ export class Home extends React.Component {
     this.context.router.push('/login');
   }
   render(){
-    function handleSelect(selectedKey) {
-      alert('selected ' + selectedKey);
-    }
+     var childrenWithAuth = React.Children.map(this.props.children, (child) => React.cloneElement(child, { auth: this.props.auth}));
     const { profile } = this.state
     return (
       <div>
@@ -64,8 +64,8 @@ export class Home extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Panel style={{marginTop:'49px'}}> 
-          {this.props.children}
+        <Panel style={{marginTop:'49px'}}>
+          {childrenWithAuth[0]}
         </Panel>
       </div>
     )
