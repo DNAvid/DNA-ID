@@ -49,10 +49,12 @@ export class Profile  extends React.Component {
           </Col> 
         </Row>
         <Row >
-          <Col md={2} mdOffset={4}>
+          <Col sm={12} md={6} >
             <Image responsive style={{maxHeight:'60px'}} src={profile.picture}/>
           </Col>
-          <Col md={6}>
+        </Row>
+        <Row>
+          <Col sm={12} md={6}>
             <h3>My profile</h3>
             <p><strong>Name: </strong> {profile.name}</p>
             <p><strong>Email: </strong> {profile.email}</p>
