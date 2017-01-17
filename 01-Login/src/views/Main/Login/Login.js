@@ -59,8 +59,7 @@ export class Login extends React.Component {
               <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Get yours</Button>
             </ButtonToolbar>
               <UserCount/> Humans and counting<br/> 
-            <h2 style={styles.subtitle} >A DNA social network for family and friends</h2>
-                <small>Due to cost, up to a maximum 50 persons will be admitted in the first phase. Just saying...</small>
+            <h2 style={styles.subtitle} >The DNA social network for families</h2>
             <p>
               <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
                Terms of use for my DNA information
