@@ -5,10 +5,8 @@ var axios = require('axios');
 
 
 var NbUsers = function() {
-  return axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/express-with-mongodb");
+  return axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/nbUsers.js");
 };
-
-var promiseObj = NbUsers();
 
 class UserCount extends React.Component{
   constructor(props){
@@ -17,7 +15,7 @@ class UserCount extends React.Component{
   }
 
   componentDidMount() {
-    promiseObj.then(data => {
+    NbUsers().then(data => {
       this.setState({usercount: data.data.nbUsers}); 
     });
   }

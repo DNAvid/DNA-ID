@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import {ProgressBar, Media, Button, Image, Grid, Row, Col} from 'react-bootstrap'
 var users = require('./users');
@@ -50,20 +51,34 @@ class PercentFamily extends React.Component {
 
 
 export class PublicProfile extends React.Component{
+
+  constructor(props){
+    super(props)
+    this.state={userProfile:false}
+  }
+
+  componentWillMount(){ 
+    axios.get("https://wt-davidweiss-dnavid_com-0.run.webtask.io/getPublicProfile.js/?pseudo="+this.props.params.user).then( 
+      res => {
+        this.setState({userProfile:res.data})
+      }
+    )
+  }
   render(){
-    var user = this.props.params.user
-    const sharingPrefs = users[user].sharingPreferences
-    const questions = Object.keys(sharingPrefs);
+    if(!this.state.userProfile){ return <div>Loading profile for {this.props.params.user}...</div>}
+
+    const {_id, profile, share, DNA} = this.state.userProfile 
+    const questions = Object.keys(share);
     return(
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col xs={3}><Image src={users[user].picture} thumbnail/></Col>
-            <Col xs={9}><h1>{user}</h1>
+            <Col xs={3}><Image src={profile.picture} thumbnail/></Col>
+            <Col xs={9}><h1>{_id}</h1>
             </Col>
           </Row>
           <Row className="show-grid">
-            <Col xs={12}>{users[user].bio}</Col>
+            <Col xs={12}>{profile.bio}</Col>
           </Row>
           <Row className="show-grid">
             <Col xs={12}>
@@ -76,7 +91,7 @@ export class PublicProfile extends React.Component{
           <Row className="show-grid">
             <Col xs={12}>
               <h4>You can use my DNA, but you must respect these conditions</h4> 
-              <WriteReport sharingPrefs={sharingPrefs} questions={questions} />
+              <WriteReport sharingPrefs={share} questions={questions} />
             </Col>
           </Row>
           <Row className="show-grid">
@@ -84,7 +99,7 @@ export class PublicProfile extends React.Component{
               <h4>
                 Data sources
               </h4> 
-              <DNAProfiles file={users[user].dataSources["23andme"]}/>
+              <DNAProfiles file={DNA["23andme"]}/>
             </Col>
           </Row>
         </Grid>
