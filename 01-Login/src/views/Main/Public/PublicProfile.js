@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import {ProgressBar, Media, Button, Image, Grid, Row, Col} from 'react-bootstrap'
-var users = require('./users');
+
 
 function WriteReport(props) {
   const questions = props.questions;
