@@ -2,7 +2,7 @@ import axios from 'axios'
 import { hashHistory } from 'react-router';
 import React from 'react';
 import {CheckBox, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Row, Col, Grid, Image} from 'react-bootstrap';
-
+import shareDefault from './share'
 
 
 function getUserProfile(){
@@ -31,7 +31,6 @@ class StatefulCheckbox extends React.Component {
     const target = event.target;
     const value = target.checked;
     var name = target.name;
-    console.log(name,value)
     this.setState({
       [name]: value
     });
@@ -52,7 +51,6 @@ class StatefulCheckbox extends React.Component {
   }
 
   render() {
-    console.log("db answer is:",typeof this.props.answer)
     return (
       <div>
       <label>
@@ -77,7 +75,6 @@ class QuestionGroup extends React.Component{
     return(
       <div>
         <h4>{this.props.category} </h4>
-        <br/>
         {
           Object.keys(questions).map((question)=>
             <StatefulCheckbox 
@@ -134,6 +131,25 @@ class Share extends React.Component {
       return(<div>Loading your sharing preferences</div>)}
     else if(!this.state.user){
       return( <div>Redirect to Home</div>)
+    }else if (!this.state.user.share){
+      console.log("shareDefault is",shareDefault)
+      axios(
+        {
+          baseURL:'https://wt-davidweiss-dnavid_com-0.run.webtask.io',
+          url: 'updateUser.js',
+          params: {
+            key: "share",
+            text: shareDefault},
+          method: 'post',
+          headers: {Authorization: 'Bearer ' + localStorage.id_token}
+        }
+      )
+      return(
+        <Questionnaire
+          share={shareDefault}
+        />
+      )
+
     }else{
       return(
         <Questionnaire

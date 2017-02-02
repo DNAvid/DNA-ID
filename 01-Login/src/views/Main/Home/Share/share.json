@@ -1,0 +1,26 @@
+{
+  "Sharing of my DNA information": {
+    "With immediate family": "true",
+    "With extended family": "true",
+    "For academic research": "true",
+    "For for-profit research": "true"
+  },
+  "Financial compensation": {
+    "From for-profit research": "true",
+    "For use in the clinic": "false",
+    "From academic research": "false"
+  },
+  "Return of results": {
+    "I want to be informed of results obtained about me that impact my health": "true",
+    "I do not want to be informed about results, that impact my health, but for which there is no preventive or corrective action known": "false"
+  },
+  "Participation in research": {
+    "I am available to answer questions from researchers who are analyzing my DNA info": "true",
+    "I want to be asked for permission every time my DNA is used (uncheck if automatic enrollment is ok)": "false"
+  },
+  "Privacy": {
+    "You will not use my DNA to deduce anything from anyone else in my family": "true",
+    "You will not analyse my DNA to assess my disease status or disease risk": "false",
+    "I do not wish to share personal information other than DNA information and I don't allow attemps at reidentification": "false"
+  }
+}
