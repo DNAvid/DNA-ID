@@ -139,8 +139,10 @@ class Share extends React.Component {
           url: 'updateUser.js',
           params: {
             key: "share",
-            text: shareDefault},
-          method: 'post',
+            text: shareDefault,
+            json: true
+          },
+                    method: 'post',
           headers: {Authorization: 'Bearer ' + localStorage.id_token}
         }
       )
