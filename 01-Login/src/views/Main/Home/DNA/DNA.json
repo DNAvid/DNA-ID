@@ -1,0 +1,13 @@
+{
+  "twentyThreeAndMe": {
+    "heading":"23andMe genotyping",        
+    "description":"SNP genotyping from 23 and Me. Done on Illumina HumanOmniExpress-24 format chip with custom probes",
+    "badge":"https://storage.googleapis.com/dnavid/23andmeBadge.png",
+    "file":""},
+    "ancestryDNA": {
+      "heading":"AncestryDNA genotyping",        
+      "description":"SNP genotyping from Ancestry DNA.",
+      "badge":"https://storage.googleapis.com/dnavid/ancestrydnaBadge.png",
+      "file":""
+    }
+}

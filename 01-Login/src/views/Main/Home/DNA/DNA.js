@@ -1,70 +1,72 @@
 import React from 'react';
 import {Button, FormGroup, ControlLabel, FormControl, HelpBlock, Media} from 'react-bootstrap'
+import axios from 'axios'
+import {DNASource, DNASources} from './DNASources'
+import dnaSources from './DNA.json'
 
-
-class DNAProfiles extends React.Component {
-  render(){
-    return(
-      <div>
-        <Media>
-          <Media.Left>
-            <img width={64} height={64} src="https://storage.googleapis.com/dnavid/23andmeBadge.png" alt="Image"/>
-          </Media.Left>
-          <Media.Body>
-            <Media.Heading>23andMe genotyping</Media.Heading>
-            <p>SNP genotyping from <a target="_blank" href="https://www.23andme.com">23 and Me</a>. Done on Illumina HumanOmniExpress-24 format chipwith custom probes.</p>
-        <form>
-          <FieldGroup
-            id="formControlsFile"
-            type="file"
-            label="File"
-            help=""
-          />
-          <Button type="submit">
-            Upload
-          </Button>
-        </form>
-          </Media.Body>
-        </Media>
-         <Media>
-           <br/><br/>
-          <Media.Left>
-            <img width={64} height={64} src="https://storage.googleapis.com/dnavid/ancestrydnaBadge.png" alt="Image"/>
-          </Media.Left>
-          <Media.Body>
-            <Media.Heading>AncestryDNA genotyping</Media.Heading>
-            <p>AncestryDNA</p>
-          </Media.Body>
-          </Media>
-      </div>
-    );
-  }
+function getUserProfile(){
+  return(
+    axios(
+      {
+        baseURL:'https://wt-davidweiss-dnavid_com-0.run.webtask.io',
+        url: 'doesUserHaveProfile.js',
+        method: 'get',
+        headers: {Authorization: 'Bearer ' + localStorage.id_token}
+      }
+    )
+  )
 }
-
-
-function FieldGroup({ id, label, help, ...props }) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
-}
-
-
 
 export class DNA extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      user:"loading",
+    }
+  }
+  componentWillMount(){ 
+    getUserProfile().then( 
+      res => {
+        this.setState({user:res.data})
+      }
+    )
+  }
   render(){
-    return (
-      <div>
-        <h4>
-          Upload your DNA files (23andMe, AncestryDNA, etc.)
-        </h4>
-        <DNAProfiles/>
-      </div>
-    );
+    if(this.state.user==='loading'){ 
+      return(<div>Loading your DNA information</div>)}
+    else if(!this.state.user){
+      return( <div>Redirect to Home</div>)
+    }else if(!this.state.user.DNA){
+      axios(
+        {
+          baseURL:'https://wt-davidweiss-dnavid_com-0.run.webtask.io',
+          url: 'updateUser.js',
+          params: {
+            key: "DNA",
+            text: dnaSources, 
+            json: true
+          },
+          method: 'post',
+          headers: {Authorization: 'Bearer ' + localStorage.id_token}
+        }
+      )
+      return (
+        <div>
+          <h3>Upload your DNA files</h3>
+          <DNASources sources={dnaSources} pseudo={this.state.user.pseudo}/>
+        </div>
+      )
+    }else if(this.state.user.DNA){
+      var sourceName = Object.keys(this.state.user.DNA)[0]
+      var source = this.state.user.DNA[sourceName]
+      return (
+        <div>
+          <h3>Upload your DNA files</h3>
+          <DNASources sources={this.state.user.DNA} pseudo={this.state.user.pseudo}/>
+        </div>
+      );
+    }
   }
 }
 
-export default DNA;
+export default DNA

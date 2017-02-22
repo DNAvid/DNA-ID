@@ -2,6 +2,23 @@ import axios from 'axios'
 import React  from 'react';
 import {Button, FormGroup, ControlLabel, FormControl, HelpBlock, Row, Col, Grid, Image} from 'react-bootstrap';
 
+function getFile(props) {
+  return (
+    axios({
+      baseURL: 'https://wt-davidweiss-dnavid_com-0.run.webtask.io',
+      url: 'transferFiles.js',
+      params: {
+        key: props.key, // profileName
+        pseudo: props.pseudo, // DNAvid
+        //json: props.json
+      },
+      method: 'get',
+      headers: {
+        Authorization: 'Bearer ' +  localStorage.id_token
+      }
+    })
+  )
+}
 
 function getUser() {
   return (
@@ -114,11 +131,11 @@ class ChoosePseudo extends React.Component {
               id="formControlsText"
               name="pseudo"
               type="text"
-              label="My DNA's Name"
+              label="Write your name. Use a nickname for more privacy."
               placeholder="Letters and numbers - max. 17 chars"
               value={this.state.pseudo}
               onChange={this.handleChange}
-              help="You may consider not revealing your real name for more privacy"
+              help="Please note that this ID will be used to identify your profile when sharing, for example, with family. Note it is different from your login (which is strictly private)."
             />
             <Button type="submit"> Choose</Button>
           </form>
@@ -132,7 +149,7 @@ class SetProfilePicture extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      "picture": this.props.profile.picture,
+      "picture": JSON.parse(localStorage.profile).picture,
       "background": this.props.profile.background,
       helpMessage: "Choose picture",
       files: undefined
@@ -146,9 +163,33 @@ class SetProfilePicture extends React.Component {
       "helpMessage": "Uploading " + event.target.files[0].name
     })
   }
+
   handleSubmit(event) {
-    console.log(this.state.files[0])
+    var data = new FormData();
+    data.append('file', this.state.files[0]);
+    var config = {
+      onUploadProgress: function(progressEvent) {
+        var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
+      },
+      params:{
+        pseudo:this.props.pseudo,
+        key:"profilePicture"
+      },
+      headers: {
+        Authorization: "Bearer " + localStorage.id_token 
+      }
+    };
+
+    axios.put('https://wt-davidweiss-dnavid_com-0.run.webtask.io/transferFiles.js', data, config)
+      .then(function (res) {
+        this.setState({ "helpMessage":"File uploaded"})
+      })
+      .catch(function (err) {
+        this.setState({ "helpMessage":"oh, snap!"})
+
+      });
   }
+
   render() {
     const pseudo = this.props.pseudo
     return (

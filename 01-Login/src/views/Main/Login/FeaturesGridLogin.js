@@ -10,19 +10,14 @@ export class FeaturesGridLogin extends React.Component {
         <Row>
           <Col md={4}>
             <h3> 
-              Very soon! You'll get to try DNA\/ID 
+              Safe and private
             </h3> 
-            <p> Invite family to join my DNA network</p>
-            <p> Store my DNA information</p>
-            <p> Control how my DNA is used:</p>
-
-              <ul>
-                <li> get paid? </li>
-                <li> participate in research? </li>
-                <li> get updated on research about me?</li>
-                <li> want to limit sharing of my DNA to non-disease info?</li>
-              </ul>
-              <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/t/define-v1-of-dna-id/">Check the status</Button>
+            <ul>
+              <li> Cutting-edge authentication with Auth0</li>
+              <li> Secure private space for your information</li>
+              <li> From anonymity to publication, you are in control</li>
+            </ul>
+            <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/t/securityAndPrivacy">See topic on forum</Button>
           </Col>
           <Col md={4}>
             <h3> 

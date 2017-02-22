@@ -14,7 +14,7 @@ exports.root = {
             marginRight: '50px',
             textAlign: 'center',
             '@media (minWidth: 768px)': {
-                    paddingTop: '50px',
+                    paddingTop: '150px',
                     paddingBottom: '20px',
             }
 }
@@ -23,7 +23,9 @@ exports.toolbar = {
   display: 'inline-block',
 }
 exports.title = {
-        fontFamily:'Varela Round, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  fontFamily:'Varela Round, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  marginTop:"75px",
+  marginBottom:"25px"
 }
 
 exports.subtitle = {
@@ -48,3 +50,25 @@ exports.buttonSecondary= {
   marginBottom: '20px'
 };
 
+//body {
+//        font-family: 'Arial', sans-serif;
+//        background-color: white;
+//        padding: 20px;
+//}
+       
+exports.Demo__someNetwork = {
+        display: 'inline-block',
+        marginRight: '30px',
+        textAlign: 'center'
+}
+exports.Demo__someNetwork__shareCount = {
+        fontSize: '12px',
+}
+
+exports.Demo__container = {
+        marginTop:'15px'
+}
+
+exports.Demo__someNetwork__shareButton = {
+
+}

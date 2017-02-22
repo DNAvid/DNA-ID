@@ -3,10 +3,11 @@ import { Link, Nav, Navbar, NavItem, NavDropdown, MenuItem, Jumbotron, ButtonToo
 import React, { PropTypes as T } from 'react'
 import AuthService from 'utils/AuthService'
 import styles from './styles.module'
-import UserCount from '../../../containers/UserCount/UserCount'
-import SocialShareButtons from '../../../containers/ShareButtons/ShareButtons'
-import FeaturesGridLogin from '../../../containers/FeaturesGridLogin/FeaturesGridLogin' 
-import FooterLogin from '../../../containers/FooterLogin/FooterLogin.js' 
+import UserCount from './UserCount'
+import SocialShareButtons from './ShareButtons'
+import FeaturesGridLogin from './FeaturesGridLogin' 
+import FooterLogin from './FooterLogin' 
+import Features from './Features' 
 
 export class Login extends React.Component {
   // These are checks
@@ -49,28 +50,21 @@ export class Login extends React.Component {
         </Navbar>
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
-            <h1 style={styles.title} > Hi: check <a href="https://dnavid.com/#/public/DNAvid?utm_source=home-page"><h1>my DNA ID</h1></a></h1>
-            {/* <div style={{width: 'auto', height: 'auto'}}>
-              <ResponsiveEmbed a16by9>
-                <iframe width="373" height="210" src="https://www.youtube.com/embed/Ur57PRdbMuw" frameBorder="0" allowFullScreen></iframe>
-              </ResponsiveEmbed>
-              </div> */}
+            <h1 style={styles.title} > 
+        My DNA network 
+            </h1>
             <ButtonToolbar style={styles.toolbar}>
-              <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Get yours</Button>
+              <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
-              <UserCount/> Humans and counting<br/> 
-            <h2 style={styles.subtitle} >The DNA social network for families</h2>
-            <p>
-              <a href="http://bb.dnavid.com/t/what-can-you-do-with-my-dna-information" target="_blank">
-               Terms of use for my DNA information
-              </a>
-            </p>
+              <UserCount /> Have joined this network<br/> 
             <div style={{width:'100%', textAlign:'center'}}>
-              <SocialShareButtons/>
-              <span> Think about this: "my DNA becomes waaay more useful as others join", then share! </span> 
+            <div style={{marginTop:"75px"}} >Invite others</div>
+              <SocialShareButtons />
+              
             </div>
           </div>
         </Jumbotron>
+    <Features />
         <FeaturesGridLogin />
         <FooterLogin />
       </div>

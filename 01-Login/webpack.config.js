@@ -41,10 +41,10 @@ var config = getConfig({
         html: function (context) {
                 return {
                         'index.html': context.defaultTemplate({
-                          title: 'DNA\\/ID - Discuss, share, and use our DNA information',
+                          title: 'DNA\\/ID - my DNA',
                                 publicPath: isDev ? '' : '',
                                 meta: {
-                                        'name': 'Discuss, share, and use our DNA information',
+                                        'name': 'DNA network for individuals and families',
                                         'description': 'for our own benefit and under our own terms'
                                 },
                                 html:addBodyHtml,

@@ -1,4 +1,3 @@
-var Radium = require('radium');
 import React from 'react'
 var Radium = require('radium');
 import styles from './styles.module.js'

@@ -1,6 +1,6 @@
 var Radium = require('radium');
 import { Link } from 'react-router'
-import FooterLogin from '../../../containers/FooterLogin/FooterLogin.js' 
+import FooterLogin from '../Login/FooterLogin.js' 
 import { Panel, Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import React, { PropTypes as T } from 'react'
 import AuthService from 'utils/AuthService'
