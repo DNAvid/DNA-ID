@@ -148,9 +148,7 @@ export class Family  extends React.Component {
   render() {
     return (
       <div>
-        <h2> My and my family's shared DNA</h2>
-        <PercentFamily/>
-        <h2> Grow Network </h2>
+        <h2> Invite Family and Friends </h2>
         <InviteFamily/>
       </div>
     );

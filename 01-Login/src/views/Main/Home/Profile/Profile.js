@@ -225,7 +225,6 @@ class SetProfilePicture extends React.Component {
 class SetProfileBio extends React.Component {
   constructor(props) {
     super(props)
-    console.log(this.props.profile.bio==undefined)
     if (this.props.profile.bio == undefined) {
       console.log("bio is undefined")
       this.state = {

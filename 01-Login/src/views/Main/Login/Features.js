@@ -1,17 +1,15 @@
 import React from "react"
 import {Button, Grid, Thumbnail, formGroup, ControlLabel, FormControl, HelpBlock, Image, Media, Row, Col} from 'react-bootstrap'
 
-
 export class Features extends React.Component {
-
   render(){
     return(
       <Grid>
         <Row>
           <Col xs={6} md={6}>
             <Thumbnail src="https://storage.googleapis.com/dnavid/Feature1.png" alt="242x200">
-              <h3>My DNA Profile</h3>
-              <p>Use to keep your private info, share with family or doctors, or participate in research.</p>
+              <h3>My DNA\/ID Homepage </h3>
+              <p>My profile and personal information. We all have something to say about our DNA. Many in my family are tall, for example.</p>
               <p>
                 <Button bsStyle="primary">Start</Button>&nbsp;
               </p>
