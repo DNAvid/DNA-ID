@@ -10,51 +10,41 @@ export class FeaturesGridLogin extends React.Component {
         <Row>
           <Col md={4}>
             <h3> 
-              Safe and private
-            </h3> 
+              Members own this website, and benefit from it</h3> 
             <ul>
-              <li> Cutting-edge authentication with Auth0</li>
-              <li> Secure private space for your information</li>
-              <li> From anonymity to publication, you are in control</li>
-            </ul>
-            <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/t/securityAndPrivacy">See topic on forum</Button>
+              <li>We set the rules, building our own true democracy</li><li>
+                We set the terms of use of our info to
+                <ul>
+                  <li>Get a share of the profits when our info is used   
+                  </li>
+                  <li>
+                    Use our DNACoin to pay for studies we need or want
+                  </li>
+                  <li>
+                    Get priority access to new discoveries </li>
+                </ul>
+            </li>
+          </ul>
+
           </Col>
           <Col md={4}>
             <h3> 
-              100% open source 
+              Members who help improve the network get paid DNACoin
             </h3> 
-            <p> It can't be any other way, if it's going to manage our DNA it's gotta be trusted and open</p>
-            <p> Help shape the first genome management system that belongs to all</p>
-            <p> Tackle the hard problems to create a scalable system of access that repects the individual. Unlock our DNA!</p>
-            <Button target="_blank" bsStyle="default" href="https://github.com/DNAvid">Join the open source project</Button>
+            <p>By joining, adding DNA info, improving your profile and showing up in results</p>
+            <p>By inviting family and friends</p>
+            <p>By contributing to the open source project</p>
+            <p>By helping to steer the community and help its outreach</p>
           </Col>
           <Col md={4}>
-            <h3>Support DNAvID</h3>
-            <p>Scan bitcoin address with bitcoin wallet app
-              <Image src="https://storage.googleapis.com/dnavid/dnavidbitcoinaddress.png" style={{maxWidth:'33%'}} responsive />
-              or send to address: <small>15UoJFGFzQcttWEUJUc8H41ZBvvg9JV1Zo</small>
-            </p>
-            <p>Support the project on AngelList</p>
-            <Button target="_blank" bsStyle="default" href="https://angel.co/dnavid">Learn more</Button>&nbsp;
+                 <h3>Buy and sell DNACoin</h3>
+                   <p>Buy to use the network, eg, for diagnostics or drug development</p>
+                   <p>Buy as an investment: DNACoin can appreciate significantly as the network grows</p>
+                   <p>Sell to cash out your DNACoin earnings</p>
           </Col>
-          {/*
-          <Col md={4}>
-            <h2>
-              Join the discussion
-            </h2> 
-            <p>
-              You have a DNA, no matter who or where you are, have your say!
-            </p>
-            <p>
-              Join the global discussion about how we want our personal DNA data to be managed and used
-            </p> 
-            <p>
-              <Button target="_blank" bsStyle="default" href="http://bb.dnavid.com/">Have your say</Button>&nbsp;
-            </p>
-          </Col>
-            */}
           </Row>
           </Grid>
+
     )
   }
 }

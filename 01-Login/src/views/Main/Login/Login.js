@@ -48,24 +48,49 @@ export class Login extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+
         <Jumbotron style={styles.jumbotronStyle}>
           <div style={styles.root}>
             <h1 style={styles.title} > 
-        My DNA network 
+              Earn DNACoin <br></br>
+              Get better health
             </h1>
             <ButtonToolbar style={styles.toolbar}>
               <Button style={styles.buttonPrimary} bsSize="large" bsStyle="primary" onClick={auth.login.bind(this)}>Join</Button>
             </ButtonToolbar>
-              <UserCount /> Have joined this network<br/> 
+            <UserCount /> Have joined this network<br/> 
+
             <div style={{width:'100%', textAlign:'center'}}>
-            <div style={{marginTop:"75px"}} >Invite others</div>
+
+              <div style={{marginTop:"75px"}} >Invite others</div>
+
               <SocialShareButtons />
-              
+
+
             </div>
+
           </div>
         </Jumbotron>
-    <Features />
+        <div style={styles.pitch}>
+              Our DNA information, that we paid for, is sold for millions to companies, who then sell drugs, insurance, etc, back to us.
+            <br></br>
+            <br></br>
+              Yet, healthcare is getting more expensive for less benefits
+            <br></br>
+            <br></br>
+              With DNACoin, there's a better way
+            <br></br>
+            <br></br>
+            <Button target="_blank" bsStyle="default" href="https://blog.dnavid.com/dnacoin-b31d1619e462">Learn more</Button>
+        </div> 
+
+        <div style={styles.sectionTitle}>
+          How it works
+        </div>
+
         <FeaturesGridLogin />
+        <div style={styles.sectionTitle}>Features</div>
+        <Features />
         <FooterLogin />
       </div>
     )

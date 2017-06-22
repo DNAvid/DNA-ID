@@ -40,6 +40,18 @@ exports.jumbotronStyle = {
             }
 }
 
+exports.pitch = {
+  textAlign:'center',
+        fontSize: '22px',
+
+
+}
+exports.sectionTitle= {
+  textAlign:'center',
+  fontSize: '52px',
+  marginTop:'65px',
+  marginBottom:'45px'
+}
 exports.buttonPrimary = {
   marginTop: '30px', 
   marginBottom: '10px'
