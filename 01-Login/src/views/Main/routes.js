@@ -20,7 +20,7 @@ var options = {
   languageDictionary: {
     title: 'Login or Signup'
   },
-   initialScreen: 'forgotPassword'
+   initialScreen: 'signUp'
 };
 
 // The new operator creates an instance of a user-defined object type 
