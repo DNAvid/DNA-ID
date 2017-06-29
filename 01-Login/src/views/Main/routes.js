@@ -18,7 +18,7 @@ var options = {
     logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
   },
   languageDictionary: {
-    title: 'Login or Signup'
+    title: 'Sign up or Login'
   },
    initialScreen: 'signUp'
 };
