@@ -23,7 +23,7 @@ exports.toolbar = {
   display: 'inline-block',
 }
 exports.title = {
-  fontFamily:'Varela Round, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  fontFamily:'"Helvetica Neue", Helvetica, Arial, sans-serif',
   marginTop:"75px",
   marginBottom:"25px"
 }

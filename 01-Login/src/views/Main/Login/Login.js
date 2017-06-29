@@ -38,7 +38,6 @@ export class Login extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem  target="_blank" eventKey={1} href="http://bb.dnavid.com" ><span style={{color:'white'}}>Engage</span></NavItem>
               <NavItem  target="_blank" eventKey={2} href="https://blog.dnavid.com" ><span style={{color:'white'}}>Blog</span></NavItem>
               <NavItem  target="_blank" eventKey={3} href="http://bb.dnavid.com/t/faq-frequently-asked-questions/46" ><span style={{color:'white'}}>FAQ</span></NavItem>
               {/* Binds login functions to keep this context
