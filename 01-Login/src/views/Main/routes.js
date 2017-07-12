@@ -7,9 +7,10 @@ import Home from './Home/Home'
 import Login from './Login/Login'
 import Public from './Public/Public'
 import PublicProfile from './Public/PublicProfile'
+import Wallet from './Home/Wallet/Wallet'
+import Share from './Home/Share/Share'
 import Family from './Home/Family/Family'
 import DNA from './Home/DNA/DNA'
-import Share from './Home/Share/Share'
 import Profile from './Home/Profile/Profile'
 
 // Options passed to the auth0 modal widget to personalize 
@@ -44,10 +45,11 @@ export const makeMainRoutes = () => {
       <Route path="login" component={Login} />
       <Route path="home" component={Home} onEnter={requireAuth}>
         <IndexRedirect to="profile" />
-        <Route path="family" component={Family}/>
-        <Route path="DNA" component={DNA}/>
+        <Route path="wallet" component={Wallet}/>
         <Route path="share" component={Share}/>
         <Route path="profile" component={Profile}/>
+        <Route path="DNA" component={DNA}/>
+        <Route path="Family" component={Family}/>
       </Route>
       <Route path="public" component={Public}>
         <Route path=":user" component={PublicProfile}/>

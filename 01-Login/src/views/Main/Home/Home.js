@@ -44,15 +44,20 @@ export class Home extends React.Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem eventKey={1}>
-                <Link style={{color:'white'}} to="/home/family">Family</Link>
+              <NavItem eventKey={2}>
+                <Link style={{color:'white'}} to="/home/wallet">Wallet</Link>
               </NavItem>
               <NavItem eventKey={2}>
                 <Link style={{color:'white'}} to="/home/share">Share</Link>
               </NavItem>
-              <NavItem eventKey={3}>
-                <Link style={{color:'white'}} to="/home/DNA">DNA</Link>
-              </NavItem>
+              <NavDropdown bsStyle='default' eventKey={3} title="Labs" id="basic-nav-dropdown">
+                <MenuItem eventKey={3.1}>
+                  <Link to="/home/DNA">DNA</Link>
+                </MenuItem>
+                <MenuItem eventKey={3.2}>
+                <Link to="/home/Family">Family</Link>
+                </MenuItem>
+              </NavDropdown>
               <NavItem  eventKey={4} >
                 <Link style={{color:'white'}} to="/home/profile">
                   <Image src={profile.picture} style={{height:"17px"}} />&nbsp;{profile.name}

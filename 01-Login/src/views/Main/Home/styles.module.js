@@ -4,7 +4,6 @@ exports.root= {
 }
 exports.navbarStyle= {
         backgroundColor: 'rgba(0,0,0,0.75)',
-        color:'white',
 }
 exports.brandStyle = {
         maxWidth: 'auto',
