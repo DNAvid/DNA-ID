@@ -31,7 +31,7 @@ const LinkedinIcon = generateShareIcon('linkedin');
 const PinterestIcon = generateShareIcon('pinterest');
 const VKIcon = generateShareIcon('vk');
 const shareUrl = 'https://dnavid.com';
-const shareTitle = 'DNAvID: It\'s my genome';
+const shareTitle = 'Earn DNAcoin, Get better health';
 
 class SocialShareButtons extends React.Component {
         render() {
@@ -55,6 +55,22 @@ class SocialShareButtons extends React.Component {
                                                 style={styles.Demo__someNetwork__shareCount}>
                                                 {count => count}
                                         </FacebookShareCount>
+                                </div>
+                                <div style={styles.Demo__someNetwork}>
+                                        <LinkedinShareButton
+                                                url={shareUrl}
+                                                title={title}
+                                                style={styles.Demo__someNetwork__shareButton}>
+                                                <LinkedinIcon
+                                                        size={32}
+                                                        round />
+                                        </LinkedinShareButton>
+
+                                        <LinkedinShareCount
+                                                url={shareUrl}
+                                                style={styles.Demo__someNetwork__shareCount}>
+                                                {count => count}
+                                        </LinkedinShareCount>
                                 </div>
 
                                 <div style={styles.Demo__someNetwork}>
@@ -85,22 +101,6 @@ class SocialShareButtons extends React.Component {
                                                 style={styles.Demo__someNetwork__shareCount}>
                                                 {count => count}
                                         </GooglePlusShareCount>
-                                </div>
-                                <div style={styles.Demo__someNetwork}>
-                                        <LinkedinShareButton
-                                                url={shareUrl}
-                                                title={title}
-                                                style={styles.Demo__someNetwork__shareButton}>
-                                                <LinkedinIcon
-                                                        size={32}
-                                                        round />
-                                        </LinkedinShareButton>
-
-                                        <LinkedinShareCount
-                                                url={shareUrl}
-                                                style={styles.Demo__someNetwork__shareCount}>
-                                                {count => count}
-                                        </LinkedinShareCount>
                                 </div>
                         </div>
                 )

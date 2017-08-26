@@ -15,13 +15,14 @@ import Profile from './Home/Profile/Profile'
 
 // Options passed to the auth0 modal widget to personalize 
 var options = {
+  socialButtonStyle:'small',
   theme: {
     logo: 'https://storage.googleapis.com/dnavid/logoDNAvID.png'
   },
   languageDictionary: {
     title: 'Sign up or Login'
   },
-   initialScreen: 'signUp'
+  initialScreen: 'signUp'
 };
 
 // The new operator creates an instance of a user-defined object type 
