@@ -15,7 +15,7 @@ export class FeaturesGridLogin extends React.Component {
               Direct contact with health and wellness providers.
             </h3> 
           <p>
-            We are using a powerfull new tech, blockchain, that allows us to avoid middlemen by creating 
+            We are using a powerful new tech, blockchain, that allows us to avoid middlemen by creating 
             <a target="_blank" href="https://blog.dnavid.com/dnacoin-b31d1619e462"> our own independent economy with our own currency: DNAcoin
             </a>
           </p>
