@@ -11,9 +11,11 @@ export class FeaturesGridLogin extends React.Component {
         <Row>
           <Col md={4}>
             <h3 style={subtitleStyle}> 
-            Forget all you know, this is different</h3> 
+           
+              Direct contact with health and wellness providers.
+            </h3> 
           <p>
-            We are using an amazing new tech, blockchain, that allows us to create  
+            We are using a powerfull new tech, blockchain, that allows us to avoid middlemen by creating 
             <a target="_blank" href="https://blog.dnavid.com/dnacoin-b31d1619e462"> our own independent economy with our own currency: DNAcoin
             </a>
           </p>
@@ -21,7 +23,7 @@ export class FeaturesGridLogin extends React.Component {
             There is no "company" wanting to squeeze our data, it's an <a target="_blank" href="https://github.com/DNAvid"> open source project owned by us all</a>
           </p>
           <p>
-            This time it will be pharma cos and others asking to access our data - we get to choose and set the conditions.
+            We choose who can use our info, for what, and in exchange for what (return of info, access to treatments, etc.)
           </p>
 
           </Col>
@@ -50,7 +52,7 @@ export class FeaturesGridLogin extends React.Component {
             I'm DNAcoin rich &mdash; now what?
             </h3>
                    <p>Pharma, doctors, etc. will need DNAcoin to access the data in the network at prices set by us (can be free). Pharma pays 10s of millions USD for licenses to large DNA health databases. If we grow enough; DNAcoin could strongly appreciate.</p>
-                   <p>Touchin wood (toc, toc) - if a disease may strike you or a loved one, DNAcoin can be pledged for a specific disease, making it more attractive for drug development, and ensuring you are part of the "new hope" study</p>
+                   <p>Touchin' wood (toc, toc) - if a disease may strike you or a loved one, DNAcoin can be pledged for a specific disease, making it more attractive for drug development, and ensuring you are part of the "new hope" study</p>
           </Col>
           </Row>
           </Grid>

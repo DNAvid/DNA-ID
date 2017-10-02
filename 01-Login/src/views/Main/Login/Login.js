@@ -68,18 +68,14 @@ export class Login extends React.Component {
                   <Col xs={10} sm={6} md={6} lg={6}>
                     <Row>
                       <h1 style={styles.title} > 
-                        Earn DNAcoin <br></br>
-                        Get better health
+                      Health and wellbeing 2.0
                       </h1>
                     </Row>
                     <Row > 
                       <Col xs={2} sm={2} md={2} lg={2}>
                       </Col>
                       <Col xs={8} sm={8} md={8} lg={8}>
-                        <ButtonGroup>
                           <Button bsSize="large" bsStyle="primary" style={{textAlign:"center",backgroundColor:"purple"}} onClick={auth.login.bind(this)}>Join</Button>
-                          <Button target="_blank" style={{textAlign:"center"}} bsSize="large" bsStyle="default" href="https://blog.dnavid.com/dnacoin-b31d1619e462">Learn more</Button>
-                        </ButtonGroup>
                       </Col>
                       <Col xs={2} sm={2} md={2} lg={2}>
                       </Col>
@@ -101,16 +97,18 @@ export class Login extends React.Component {
               <Col xs={10} sm={6} md={6} lg={6}>
                 <div >
                   <h3 style={styles.pitch}> 
-                    Being able to read our DNA allows to obtain knowledge about ourselves.
+                    Medicine costs more and more for less health and wellbeing.                    
                     <br></br>
                     <br></br>
-                    Knowledge should translate into better personalized health and nutrition, meaning more quality time to spend with loved ones, and to achieve our dreams.
+                    Folks finding medical scientists to look at their health and DNA info have dodged diagnosis death sentences.<br></br>
+                    <br></br>
+                    Yet, only after a pharma company has developed a drug or diagnostic can we pay for a new drug/diagnostic.
                     <br></br>
                     <br></br>
-                    Yet, healthcare is getting more expensive for less benefits.
+                    Beyond health, DNA can inform how best to eat, exercise, sleep, etc. if only we could openly study humanity's DNA without the burden of entrenched interests.                     <br></br>
                     <br></br>
-                    <br></br>
-                    If you believe we can change this if we make it our collective goal, this community is for you.
+                    If you believe we can be smarter and build a network of individuals, scientists and doctors, this site is for you. Start now, reap lifelong benefits.
+
                   </h3>
                   <br></br>
                 </div> 
