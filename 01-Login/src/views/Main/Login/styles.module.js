@@ -58,7 +58,7 @@ exports.pitch = {
 
 }
 exports.sectionTitle= {
-  color: 'purple',
+  color: 'green',
   textAlign:'center',
   fontSize: '52px',
   marginTop:'65px',
